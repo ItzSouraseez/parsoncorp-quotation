@@ -25,19 +25,15 @@
   .hero-left { padding: 72px 60px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--g300); }
   .hero-tag { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--g500); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
   .hero-tag::before { content: ''; width: 18px; height: 1px; background: var(--g500); }
-  .hero-title { font-size: clamp(36px, 4vw, 54px); font-weight: 700; line-height: 1.05; letter-spacing: -2px; color: var(--black); margin-bottom: 20px; }
+  .hero-title { font-size: clamp(36px, 4vw, 56px); font-weight: 700; line-height: 1.05; letter-spacing: -2px; color: var(--black); margin-bottom: 20px; }
   .hero-title em { font-style: normal; color: var(--g500); }
-  .hero-desc { font-size: 14px; color: var(--g700); max-width: 400px; line-height: 1.85; margin-bottom: 24px; }
+  .hero-desc { font-size: 14px; color: var(--g700); max-width: 400px; line-height: 1.85; margin-bottom: 16px; }
 
-  .cost-summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--g300); border: 1px solid var(--g300); border-radius: 6px; overflow: hidden; margin-bottom: 32px; }
-  .cs-cell { background: var(--white); padding: 16px 18px; }
-  .cs-cell.dark { background: var(--black); }
-  .cs-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--g500); margin-bottom: 5px; }
-  .cs-label.light { color: rgba(255,255,255,0.4); }
-  .cs-value { font-size: 20px; font-weight: 700; color: var(--black); letter-spacing: -0.5px; }
-  .cs-value.light { color: #fff; }
-  .cs-sub { font-size: 11px; color: var(--g500); margin-top: 3px; }
-  .cs-sub.light { color: rgba(255,255,255,0.35); }
+  .retainer-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--g100); border: 1px solid var(--g300); border-radius: 4px; padding: 10px 16px; margin-bottom: 40px; flex-wrap: wrap; gap: 0; }
+  .rb-divider { width: 1px; height: 36px; background: var(--g300); margin: 0 16px; }
+  .rb-label { font-size: 11px; color: var(--g500); letter-spacing: 0.04em; }
+  .rb-value { font-size: 20px; font-weight: 700; color: var(--black); letter-spacing: -0.5px; }
+  .rb-period { font-size: 11px; color: var(--g500); }
 
   .hero-actions { display: flex; align-items: center; gap: 20px; }
   .btn-primary { background: var(--black); color: var(--white); border: none; padding: 13px 26px; font-size: 12px; font-weight: 500; letter-spacing: 0.05em; cursor: pointer; border-radius: 4px; font-family: inherit; transition: background 0.2s; }
@@ -48,89 +44,68 @@
   /* RETAINER PANEL */
   .retainer-panel { padding: 40px 48px; background: var(--black); display: flex; flex-direction: column; gap: 20px; overflow-y: auto; }
   .rp-top-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 2px; }
-  .rp-hero-row { display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
-  .rp-month-block { }
-  .rp-monthly { font-size: clamp(36px, 4vw, 52px); font-weight: 700; letter-spacing: -2px; color: #fff; line-height: 1; }
-  .rp-monthly span { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.4); letter-spacing: 0; vertical-align: middle; margin-left: 3px; }
-  .rp-m1-block { background: rgba(255,255,255,0.06); border-radius: 5px; padding: 10px 14px; }
-  .rp-m1-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 3px; }
-  .rp-m1-val { font-size: 18px; font-weight: 700; color: #f9a8d4; letter-spacing: -0.5px; }
-  .rp-sub { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+  .rp-monthly { font-size: clamp(36px, 4.5vw, 58px); font-weight: 700; letter-spacing: -2.5px; color: #fff; line-height: 1; }
+  .rp-monthly span { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.4); letter-spacing: 0; vertical-align: middle; margin-left: 4px; }
+  .rp-sub { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 5px; }
   .rp-divider { height: 1px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
 
-  .rp-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; }
-  .rp-stat { background: rgba(255,255,255,0.04); padding: 12px 10px; }
-  .rp-stat-num { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: -0.5px; line-height: 1; margin-bottom: 3px; }
-  .rp-stat-label { font-size: 9px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.07em; }
+  .rp-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; }
+  .rp-stat { background: rgba(255,255,255,0.04); padding: 12px 12px; }
+  .rp-stat-num { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.5px; line-height: 1; margin-bottom: 3px; }
+  .rp-stat-label { font-size: 9px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; }
 
   .rp-section-title { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.3); margin-bottom: 8px; }
 
+  /* TWO-COLUMN QUOTE SPLIT */
+  .rp-quote-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .rp-col-title { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .rp-qtable { width: 100%; border-collapse: collapse; }
+  .rp-qtable tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .rp-qtable tr:last-child { border-bottom: none; }
+  .rp-qtable td { padding: 7px 0; font-size: 11px; }
+  .rp-qtable td:first-child { color: rgba(255,255,255,0.55); }
+  .rp-qtable td:last-child { text-align: right; color: #fff; font-weight: 500; }
+  .rp-qtable tr.dev td:last-child { color: #93c5fd; }
+  .rp-qtable tr.design td:last-child { color: #f9a8d4; }
+  .rp-qtable tr.crm td:last-child { color: #d8b4fe; }
+
+  .rp-col-subtotal { display: flex; justify-content: space-between; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 12px; }
+  .rp-col-subtotal span:first-child { color: rgba(255,255,255,0.4); }
+  .rp-col-subtotal span:last-child { font-weight: 700; color: #fff; }
+
   .rp-month-grid { display: flex; flex-direction: column; gap: 1px; }
   .rp-month-row { display: flex; align-items: center; background: rgba(255,255,255,0.03); border-radius: 3px; overflow: hidden; }
-  .rp-month-row.special { background: rgba(249,168,212,0.07); }
-  .rp-month-num { width: 30px; text-align: center; font-size: 9px; color: rgba(255,255,255,0.3); flex-shrink: 0; padding: 8px 0; }
-  .rp-month-label { flex: 1; font-size: 11px; color: rgba(255,255,255,0.65); padding: 8px 8px; }
-  .rp-month-tag { font-size: 8px; padding: 2px 7px; border-radius: 3px; margin-right: 4px; flex-shrink: 0; font-weight: 600; letter-spacing: 0.05em; }
-  .mt-dev { background: rgba(147,197,253,0.18); color: #93c5fd; }
-  .mt-design { background: rgba(249,168,212,0.18); color: #f9a8d4; }
-  .mt-support { background: rgba(249,168,212,0.1); color: rgba(249,168,212,0.7); }
-  .mt-ph { font-size: 8px; padding: 2px 6px; border-radius: 3px; margin-right: 4px; flex-shrink: 0; font-weight: 600; }
+  .rp-month-num { width: 32px; text-align: center; font-size: 9px; color: rgba(255,255,255,0.3); flex-shrink: 0; padding: 7px 0; }
+  .rp-month-label { flex: 1; font-size: 11px; color: rgba(255,255,255,0.65); padding: 7px 8px; }
+  .rp-month-phase { font-size: 8px; padding: 2px 7px; border-radius: 3px; margin-right: 6px; flex-shrink: 0; font-weight: 600; letter-spacing: 0.05em; }
   .mp1 { background: rgba(59,130,246,0.2); color: #93c5fd; }
   .mp2 { background: rgba(245,158,11,0.2); color: #fcd34d; }
   .mp3 { background: rgba(34,197,94,0.2); color: #86efac; }
   .mp4 { background: rgba(168,85,247,0.2); color: #d8b4fe; }
   .mp5 { background: rgba(236,72,153,0.2); color: #f9a8d4; }
-  .rp-month-amt { font-size: 12px; font-weight: 700; color: #fff; padding: 8px 10px; flex-shrink: 0; min-width: 72px; text-align: right; }
-  .rp-month-amt.pink { color: #f9a8d4; }
+  .mpd { background: rgba(249,168,212,0.15); color: #f9a8d4; }
+  .rp-month-amt { font-size: 11px; font-weight: 600; color: #fff; padding: 7px 10px; flex-shrink: 0; }
 
   .rp-total-row { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.07); border-radius: 6px; padding: 12px 14px; margin-top: 4px; }
   .rp-total-label { font-size: 11px; color: rgba(255,255,255,0.4); }
-  .rp-total-amt { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
+  .rp-total-amt { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
 
   .rp-terms { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; }
   .rp-term { background: rgba(255,255,255,0.03); padding: 10px 12px; }
   .rp-term-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 3px; }
   .rp-term-val { font-size: 11px; color: rgba(255,255,255,0.65); }
-  .rp-validity { font-size: 10px; color: rgba(255,255,255,0.2); text-align: center; }
+  .rp-validity { font-size: 10px; color: rgba(255,255,255,0.2); text-align: center; letter-spacing: 0.03em; }
 
   /* SECTIONS */
   .section { padding: 72px 60px; border-top: 1px solid var(--g300); }
   .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--g500); margin-bottom: 36px; display: flex; align-items: center; gap: 14px; }
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--g300); }
 
-  /* COST BREAKDOWN SECTION */
-  .breakdown-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
-  .breakdown-box { border: 1px solid var(--g300); border-radius: 8px; overflow: hidden; }
-  .breakdown-box-header { padding: 16px 20px; border-bottom: 1px solid var(--g300); display: flex; justify-content: space-between; align-items: center; }
-  .bbh-title { font-size: 13px; font-weight: 600; color: var(--black); }
-  .bbh-badge { font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 3px; }
-  .badge-dev { background: #dbeafe; color: #1e40af; }
-  .badge-design { background: #fce7f3; color: #9d174d; }
-  .bbh-total { font-size: 16px; font-weight: 700; color: var(--black); }
-  .breakdown-table { width: 100%; border-collapse: collapse; }
-  .breakdown-table tr { border-bottom: 1px solid var(--g200); }
-  .breakdown-table tr:last-child { border-bottom: none; }
-  .breakdown-table td { padding: 10px 20px; font-size: 12px; color: var(--g700); }
-  .breakdown-table td:last-child { text-align: right; font-weight: 500; color: var(--black); }
-
-  .grand-total-box { background: var(--black); border-radius: 8px; padding: 28px 32px; }
-  .gtb-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; margin-bottom: 20px; }
-  .gtb-cell { background: rgba(255,255,255,0.04); padding: 16px 14px; }
-  .gtb-cell.hl { background: rgba(134,239,172,0.08); }
-  .gtb-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.3); margin-bottom: 5px; }
-  .gtb-val { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
-  .gtb-val.green { color: #86efac; }
-  .gtb-sub { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 3px; }
-  .gtb-final { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: rgba(255,255,255,0.06); border-radius: 6px; }
-  .gtb-final-label { font-size: 12px; color: rgba(255,255,255,0.5); }
-  .gtb-final-label small { display: block; font-size: 10px; color: rgba(255,255,255,0.25); margin-top: 2px; }
-  .gtb-final-val { font-size: 32px; font-weight: 700; color: #fff; letter-spacing: -1.5px; }
-  .gtb-addon { font-size: 11px; color: rgba(255,255,255,0.25); text-align: center; margin-top: 12px; }
-
-  /* DESIGN SCOPE */
+  /* DESIGN SCOPE SECTION */
   .design-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--g300); border: 1px solid var(--g300); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
-  .design-card { background: var(--white); padding: 24px 22px; transition: background 0.15s; }
+  .design-card { background: var(--white); padding: 26px 24px; transition: background 0.15s; }
   .design-card:hover { background: var(--g100); }
+  .design-card.full { grid-column: 1 / -1; }
   .design-card-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 10px; display: inline-block; padding: 3px 9px; border-radius: 3px; }
   .tag-discovery { background: #fef3c7; color: #92400e; }
   .tag-brand { background: #fce7f3; color: #9d174d; }
@@ -138,92 +113,121 @@
   .tag-crm-design { background: #ede9fe; color: #5b21b6; }
   .tag-responsive { background: #d1fae5; color: #065f46; }
   .tag-addon { background: #fef9c3; color: #854d0e; }
-  .design-card-title { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
-  .design-card-desc { font-size: 12px; color: var(--g500); line-height: 1.7; margin-bottom: 10px; }
-  .design-features { list-style: none; font-size: 11px; color: var(--g700); }
-  .design-features li { padding: 3px 0; border-bottom: 1px solid var(--g200); display: flex; gap: 7px; }
+  .design-card-title { font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+  .design-card-desc { font-size: 12px; color: var(--g500); line-height: 1.75; margin-bottom: 12px; }
+  .design-features { list-style: none; font-size: 12px; color: var(--g700); }
+  .design-features li { padding: 4px 0; border-bottom: 1px solid var(--g200); display: flex; gap: 8px; }
   .design-features li:last-child { border-bottom: none; }
-  .design-features li::before { content: '→'; color: var(--g300); flex-shrink: 0; font-size: 10px; }
-  .design-price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--g200); }
-  .design-price { font-size: 16px; font-weight: 700; color: var(--black); }
+  .design-features li::before { content: '→'; color: var(--g300); flex-shrink: 0; font-size: 11px; }
+  .design-price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--g200); }
+  .design-price { font-size: 18px; font-weight: 700; color: var(--black); letter-spacing: -0.5px; }
   .design-price-label { font-size: 11px; color: var(--g500); }
 
-  /* DESIGN SUPPORT TABLE */
-  .support-note { font-size: 12px; color: var(--g500); font-style: italic; margin-bottom: 16px; background: var(--g100); padding: 12px 16px; border-radius: 5px; border-left: 3px solid var(--g300); }
-  .support-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 0; }
+  /* MONTHLY DESIGN SUPPORT TABLE */
+  .support-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 0; }
   .support-table thead tr { background: var(--black); }
-  .support-table thead th { padding: 11px 16px; text-align: left; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .support-table thead th { padding: 12px 16px; text-align: left; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
   .support-table thead th:nth-child(2), .support-table thead th:nth-child(3) { text-align: center; }
   .support-table tbody tr { border-bottom: 1px solid var(--g200); transition: background 0.15s; }
   .support-table tbody tr:last-child { border-bottom: none; }
   .support-table tbody tr:hover { background: var(--g100); }
-  .support-table tbody tr.total-row { background: var(--g100); }
-  .support-table tbody td { padding: 11px 16px; font-size: 12px; color: var(--g700); }
+  .support-table tbody td { padding: 13px 16px; font-size: 13px; color: var(--g700); }
   .support-table tbody td:nth-child(2), .support-table tbody td:nth-child(3) { text-align: center; font-weight: 500; }
   .support-table tbody td:nth-child(2) { color: var(--black); }
-  .support-table tbody td:nth-child(3) { color: #9d174d; }
+  .support-table tbody td:nth-child(3) { color: #5b21b6; }
+  .support-note { font-size: 12px; color: var(--g500); font-style: italic; margin-bottom: 16px; }
+
+  /* OPTIONAL ADD-ON */
+  .addon-row { display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--g300); border-radius: 6px; padding: 20px 24px; background: var(--g100); margin-bottom: 32px; }
+  .addon-left { display: flex; align-items: center; gap: 16px; }
+  .addon-badge { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; padding: 3px 9px; border-radius: 3px; background: #fef9c3; color: #854d0e; }
+  .addon-title { font-size: 14px; font-weight: 600; color: var(--black); }
+  .addon-desc { font-size: 12px; color: var(--g500); margin-top: 2px; }
+  .addon-price { font-size: 20px; font-weight: 700; color: var(--black); letter-spacing: -0.5px; }
+
+  /* COMBINED TOTALS */
+  .totals-section { background: var(--black); border-radius: 8px; padding: 36px 40px; margin-top: 32px; }
+  .totals-header { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+  .totals-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; margin-bottom: 20px; }
+  .totals-cell { background: rgba(255,255,255,0.04); padding: 18px 16px; }
+  .totals-cell-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); margin-bottom: 6px; }
+  .totals-cell-val { font-size: 24px; font-weight: 700; color: #fff; letter-spacing: -1px; line-height: 1; }
+  .totals-cell-sub { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+  .totals-cell.highlight .totals-cell-val { color: #86efac; }
+  .totals-breakdown { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .totals-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; padding: 10px 14px; border-radius: 4px; }
+  .totals-row.dev { background: rgba(147,197,253,0.08); }
+  .totals-row.design { background: rgba(249,168,212,0.08); }
+  .totals-row.crm { background: rgba(216,180,254,0.08); }
+  .totals-row .tr-label { color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 10px; }
+  .totals-row .tr-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot-dev { background: #93c5fd; }
+  .dot-design { background: #f9a8d4; }
+  .dot-crm { background: #d8b4fe; }
+  .totals-row .tr-val { font-weight: 600; color: #fff; font-size: 14px; }
+  .totals-final { display: flex; justify-content: space-between; align-items: center; padding: 16px 14px; background: rgba(255,255,255,0.06); border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); }
+  .totals-final-label { font-size: 13px; color: rgba(255,255,255,0.6); }
+  .totals-final-val { font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -1px; }
+  .totals-addon-note { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; margin-top: 12px; }
 
   /* PHASE CARDS */
   .phase-card { border: 1px solid var(--g300); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
-  .phase-card-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 26px; background: var(--g100); border-bottom: 1px solid var(--g300); flex-wrap: wrap; gap: 10px; }
-  .pch-left { display: flex; align-items: center; gap: 14px; }
+  .phase-card-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 28px; background: var(--g100); border-bottom: 1px solid var(--g300); }
+  .pch-left { display: flex; align-items: center; gap: 16px; }
   .pch-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; }
   .pb1 { background: #dbeafe; color: #1e40af; }
   .pb2 { background: #fef3c7; color: #92400e; }
   .pb3 { background: #d1fae5; color: #065f46; }
   .pb4 { background: #ede9fe; color: #5b21b6; }
   .pb5 { background: #fce7f3; color: #9d174d; }
-  .pch-title { font-size: 15px; font-weight: 600; color: var(--black); }
-  .pch-months { font-size: 12px; color: var(--g500); margin-top: 1px; }
+  .pbD { background: #fce7f3; color: #9d174d; }
+  .pch-title { font-size: 16px; font-weight: 600; color: var(--black); }
+  .pch-months { font-size: 12px; color: var(--g500); }
   .pch-cost-label { font-size: 10px; color: var(--g500); text-transform: uppercase; letter-spacing: 0.06em; }
-  .pch-cost-val { font-size: 17px; font-weight: 700; color: var(--black); letter-spacing: -0.5px; text-align: right; }
+  .pch-cost-val { font-size: 18px; font-weight: 700; color: var(--black); letter-spacing: -0.5px; text-align: right; }
   .phase-table { width: 100%; border-collapse: collapse; }
   .phase-table thead tr { background: var(--black); }
-  .phase-table thead th { padding: 10px 16px; text-align: left; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .phase-table thead th { padding: 10px 16px; text-align: left; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
   .phase-table thead th:nth-child(3) { text-align: center; }
   .phase-table tbody tr { border-bottom: 1px solid var(--g200); transition: background 0.15s; }
   .phase-table tbody tr:last-child { border-bottom: none; }
   .phase-table tbody tr:hover { background: var(--g100); }
-  .phase-table tbody td { padding: 13px 16px; vertical-align: top; font-size: 12px; color: var(--g700); }
+  .phase-table tbody td { padding: 14px 16px; vertical-align: top; font-size: 13px; color: var(--g700); }
   .phase-table tbody td:nth-child(3) { text-align: center; }
-  .task-name { font-weight: 600; color: var(--black); font-size: 13px; }
-  .task-sub { font-size: 11px; color: var(--g500); margin-top: 2px; line-height: 1.5; }
-  .task-type { display: inline-block; font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 2px; margin-left: 6px; vertical-align: middle; }
-  .tt-dev { background: #dbeafe; color: #1e40af; }
-  .tt-design { background: #fce7f3; color: #9d174d; }
-  .tt-both { background: #f3f4f6; color: #374151; }
+  .task-name { font-weight: 500; color: var(--black); font-size: 13px; }
+  .task-sub { font-size: 11px; color: var(--g500); margin-top: 3px; line-height: 1.5; }
   .week-badge { display: inline-block; background: var(--g200); color: var(--g700); font-size: 10px; padding: 3px 9px; border-radius: 3px; font-weight: 500; white-space: nowrap; }
-  .deliverable-list { list-style: none; font-size: 11px; color: var(--g500); margin-top: 4px; }
-  .deliverable-list li { padding: 2px 0; display: flex; gap: 6px; line-height: 1.5; }
+  .deliverable-list { list-style: none; font-size: 11px; color: var(--g500); }
+  .deliverable-list li { padding: 2px 0; display: flex; gap: 6px; }
   .deliverable-list li::before { content: '→'; color: var(--g300); flex-shrink: 0; }
-  .phase-card-footer { padding: 14px 26px; background: var(--g100); border-top: 1px solid var(--g300); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-  .pcf-goal { font-size: 12px; color: var(--g700); max-width: 72%; line-height: 1.6; }
+  .phase-card-footer { padding: 16px 28px; background: var(--g100); border-top: 1px solid var(--g300); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .pcf-goal { font-size: 12px; color: var(--g700); max-width: 70%; line-height: 1.6; }
   .pcf-goal strong { color: var(--black); }
   .pcf-milestone { font-size: 11px; color: var(--g500); text-align: right; }
 
-  /* CRM */
+  /* CRM SCOPE */
   .crm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--g300); border: 1px solid var(--g300); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
-  .crm-card { background: var(--white); padding: 24px 22px; transition: background 0.15s; }
+  .crm-card { background: var(--white); padding: 26px 24px; transition: background 0.15s; }
   .crm-card:hover { background: var(--g100); }
   .crm-card-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 10px; display: inline-block; padding: 3px 9px; border-radius: 3px; }
   .tag-crm { background: #ede9fe; color: #5b21b6; }
   .tag-sf { background: #dbeafe; color: #1e40af; }
   .tag-tally { background: #dcfce7; color: #166534; }
   .tag-client { background: #fef9c3; color: #854d0e; }
-  .crm-card-title { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 7px; }
-  .crm-card-desc { font-size: 12px; color: var(--g500); line-height: 1.7; margin-bottom: 10px; }
-  .crm-features { list-style: none; font-size: 11px; color: var(--g700); }
-  .crm-features li { padding: 3px 0; border-bottom: 1px solid var(--g200); display: flex; gap: 7px; }
+  .crm-card-title { font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+  .crm-card-desc { font-size: 12px; color: var(--g500); line-height: 1.75; margin-bottom: 12px; }
+  .crm-features { list-style: none; font-size: 12px; color: var(--g700); }
+  .crm-features li { padding: 4px 0; border-bottom: 1px solid var(--g200); display: flex; gap: 8px; }
   .crm-features li:last-child { border-bottom: none; }
-  .crm-features li::before { content: '→'; color: var(--g300); flex-shrink: 0; }
-  .crm-note { background: var(--g100); border: 1px solid var(--g300); border-radius: 6px; padding: 18px 22px; font-size: 12px; color: var(--g700); line-height: 1.85; }
+  .crm-features li::before { content: '→'; color: var(--g300); flex-shrink: 0; font-size: 11px; }
+  .crm-note { background: var(--g100); border: 1px solid var(--g300); border-radius: 6px; padding: 20px 24px; font-size: 13px; color: var(--g700); line-height: 1.85; }
   .crm-note strong { color: var(--black); font-weight: 600; }
 
   .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--g300); border: 1px solid var(--g300); border-radius: 6px; overflow: hidden; }
-  .card { background: var(--white); padding: 24px 20px; transition: background 0.15s; }
+  .card { background: var(--white); padding: 26px 22px; transition: background 0.15s; }
   .card:hover { background: var(--g100); }
-  .card-number { font-size: 10px; color: var(--g500); letter-spacing: 0.08em; margin-bottom: 12px; }
-  .card-title { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+  .card-number { font-size: 10px; color: var(--g500); letter-spacing: 0.08em; margin-bottom: 14px; }
+  .card-title { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 7px; }
   .card-desc { font-size: 11px; color: var(--g500); line-height: 1.7; }
 
   footer { padding: 24px 60px; border-top: 1px solid var(--g300); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
@@ -234,9 +238,10 @@
     nav, .hero-left, .retainer-panel, .section, footer { padding-left: 24px; padding-right: 24px; }
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { border-right: none; }
-    .cost-summary-grid, .cards-grid, .crm-grid, .design-grid, .breakdown-wrapper, .gtb-inner { grid-template-columns: 1fr; }
+    .cards-grid, .crm-grid, .design-grid, .totals-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
-    .rp-stats { grid-template-columns: 1fr 1fr; }
+    .rp-quote-cols { grid-template-columns: 1fr; }
+    .design-card.full { grid-column: 1; }
   }
 </style>
 </head>
@@ -253,165 +258,105 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">12-Month Dev Retainer + One-Time Design — 2026</div>
+    <div class="hero-tag">12-Month Retainer — Design + Dev — 2026</div>
     <h1 class="hero-title">Parsoncorp<br><em>Revamp</em></h1>
-    <p class="hero-desc">Full-stack e-commerce platform + CRM + Salesforce + Tally integrations on a 12-month dev retainer of ₹35,000/month. Design is a one-time upfront cost of ₹35,000 in Month 1, with a small ongoing support fee from Month 2.</p>
+    <p class="hero-desc">Full-stack e-commerce platform + CRM + Salesforce + Tally integrations, with a complete UI/UX design system — delivered over 12 months on a unified retainer covering both development and design.</p>
 
-    <div class="cost-summary-grid">
-      <div class="cs-cell">
-        <div class="cs-label">Dev retainer</div>
-        <div class="cs-value">₹35,000</div>
-        <div class="cs-sub">per month × 12</div>
+    <div class="retainer-badge">
+      <div>
+        <div class="rb-label">Monthly retainer (Dev + Design)</div>
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <div class="rb-value">₹70,000</div>
+          <div class="rb-period">/ month × 12</div>
+        </div>
       </div>
-      <div class="cs-cell">
-        <div class="cs-label">Design (one-time)</div>
-        <div class="cs-value">₹35,000</div>
-        <div class="cs-sub">Month 1 only</div>
-      </div>
-      <div class="cs-cell dark">
-        <div class="cs-label light">Total project cost</div>
-        <div class="cs-value light">₹5,87,000</div>
-        <div class="cs-sub light">incl. design support M2+</div>
+      <div class="rb-divider"></div>
+      <div>
+        <div class="rb-label">Total contract value</div>
+        <div class="rb-value">₹8,40,000</div>
       </div>
     </div>
 
     <div class="hero-actions">
       <button class="btn-primary">View Full Plan ↓</button>
-      <button class="btn-ghost">5 phases · 12 months</button>
+      <button class="btn-ghost">5 phases · 12 months · 2 disciplines</button>
     </div>
   </div>
 
   <!-- RETAINER PANEL -->
   <div class="retainer-panel">
     <div>
-      <div class="rp-top-label">Monthly dev retainer</div>
-      <div class="rp-hero-row">
-        <div class="rp-month-block">
-          <div class="rp-monthly">₹35,000 <span>/ month</span></div>
-          <div class="rp-sub">Development only · 12 months · GST extra if applicable</div>
-        </div>
-        <div class="rp-m1-block">
-          <div class="rp-m1-label">Month 1 only</div>
-          <div class="rp-m1-val">+₹35,000</div>
-          <div style="font-size:9px;color:rgba(255,255,255,0.3);margin-top:2px;">one-time design</div>
-        </div>
-      </div>
+      <div class="rp-top-label">Combined monthly retainer</div>
+      <div class="rp-monthly">₹70,000 <span>/ month</span></div>
+      <div class="rp-sub">Development ₹35,000 + Design ₹35,000 · GST extra · 12-month contract</div>
     </div>
 
     <div class="rp-stats">
       <div class="rp-stat"><div class="rp-stat-num">12</div><div class="rp-stat-label">Months</div></div>
       <div class="rp-stat"><div class="rp-stat-num">5</div><div class="rp-stat-label">Phases</div></div>
-      <div class="rp-stat"><div class="rp-stat-num">₹4.2L</div><div class="rp-stat-label">Dev total</div></div>
-      <div class="rp-stat"><div class="rp-stat-num">₹5.87L</div><div class="rp-stat-label">Grand total</div></div>
+      <div class="rp-stat"><div class="rp-stat-num">₹8.4L</div><div class="rp-stat-label">Total</div></div>
     </div>
 
     <div class="rp-divider"></div>
 
     <div>
-      <div class="rp-section-title">Month-by-month — what you pay</div>
-      <div class="rp-month-grid">
-        <div class="rp-month-row special">
-          <div class="rp-month-num">M1</div>
-          <div class="rp-month-label">Setup + auth + catalogue + full design (one-time)</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-design">Design</div>
-          <div class="rp-month-tag mp1">Ph 1</div>
-          <div class="rp-month-amt pink">₹70,000</div>
+      <div class="rp-section-title">What's covered each month</div>
+      <div class="rp-quote-cols">
+        <div>
+          <div class="rp-col-title">Development — ₹35,000/mo</div>
+          <table class="rp-qtable">
+            <tr class="dev"><td>E-commerce platform</td><td>₹1,00,000</td></tr>
+            <tr class="dev"><td>Admin panel + dashboard</td><td>₹20,000</td></tr>
+            <tr class="crm"><td>CRM core module</td><td>₹18,000</td></tr>
+            <tr class="crm"><td>Salesforce integration</td><td>₹12,000</td></tr>
+            <tr class="crm"><td>Tally integration</td><td>₹10,000</td></tr>
+            <tr class="crm"><td>Per-client config panel</td><td>₹5,000</td></tr>
+            <tr class="crm"><td>CRM analytics</td><td>₹10,000</td></tr>
+            <tr class="dev"><td>QA, deploy, docs</td><td>₹35,000</td></tr>
+          </table>
+          <div class="rp-col-subtotal"><span>Dev total</span><span>₹4,20,000</span></div>
         </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M2</div>
-          <div class="rp-month-label">Product catalogue frontend + design support</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp1">Ph 1</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M3</div>
-          <div class="rp-month-label">Bulk ordering + admin panel base</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp2">Ph 2</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M4</div>
-          <div class="rp-month-label">Branding configurator + payment gateway</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp2">Ph 2</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M5</div>
-          <div class="rp-month-label">GST invoicing + corporate accounts</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp2">Ph 2</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M6</div>
-          <div class="rp-month-label">Admin orders, inventory + analytics</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp3">Ph 3</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M7</div>
-          <div class="rp-month-label">Email + notifications + QA prep</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp3">Ph 3</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M8</div>
-          <div class="rp-month-label">Platform QA + production launch</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp3">Ph 3</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M9</div>
-          <div class="rp-month-label">CRM core + per-client config panel</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp4">Ph 4</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M10</div>
-          <div class="rp-month-label">Salesforce integration (per client)</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp4">Ph 4</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M11</div>
-          <div class="rp-month-label">Tally integration + CRM analytics + integration QA</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp4">Ph 4</div>
-          <div class="rp-month-amt">₹47,000</div>
-        </div>
-        <div class="rp-month-row">
-          <div class="rp-month-num">M12</div>
-          <div class="rp-month-label">Final QA + optimisation + docs + full handover</div>
-          <div class="rp-month-tag mt-dev">Dev</div>
-          <div class="rp-month-tag mt-support">Support</div>
-          <div class="rp-month-tag mp5">Ph 5</div>
-          <div class="rp-month-amt">₹47,000</div>
+        <div>
+          <div class="rp-col-title">Design — ₹35,000/mo</div>
+          <table class="rp-qtable">
+            <tr class="design"><td>Discovery &amp; strategy</td><td>₹4,000</td></tr>
+            <tr class="design"><td>Branding &amp; visual identity</td><td>₹8,000</td></tr>
+            <tr class="design"><td>Website UI/UX (core screens)</td><td>₹15,000</td></tr>
+            <tr class="design"><td>CRM / SF interface design</td><td>₹5,000</td></tr>
+            <tr class="design"><td>Responsive &amp; interaction</td><td>₹3,000</td></tr>
+            <tr class="design"><td>UI/UX iterations (M2+)</td><td>₹5,000</td></tr>
+            <tr class="design"><td>Minor page additions (M2+)</td><td>₹3,000</td></tr>
+            <tr class="design"><td>Ongoing design support</td><td>₹2,000</td></tr>
+          </table>
+          <div class="rp-col-subtotal"><span>Design total</span><span>₹4,20,000</span></div>
         </div>
       </div>
+    </div>
+
+    <div class="rp-divider"></div>
+
+    <div>
+      <div class="rp-section-title">Month-by-month schedule</div>
+      <div class="rp-month-grid">
+        <div class="rp-month-row"><div class="rp-month-num">M1</div><div class="rp-month-label">Setup + auth + branding &amp; visual identity</div><div class="rp-month-phase mp1">Ph 1</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M2</div><div class="rp-month-label">Product catalogue + core UI/UX screens</div><div class="rp-month-phase mp1">Ph 1</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M3</div><div class="rp-month-label">Bulk ordering + admin base + responsive design</div><div class="rp-month-phase mp2">Ph 2</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M4</div><div class="rp-month-label">Branding configurator + payment + UX iterations</div><div class="rp-month-phase mp2">Ph 2</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M5</div><div class="rp-month-label">GST invoicing + corporate accounts + page additions</div><div class="rp-month-phase mp2">Ph 2</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M6</div><div class="rp-month-label">Admin panel orders &amp; inventory + design support</div><div class="rp-month-phase mp3">Ph 3</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M7</div><div class="rp-month-label">Email + notifications + analytics + design QA</div><div class="rp-month-phase mp3">Ph 3</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M8</div><div class="rp-month-label">Platform launch + CRM core design</div><div class="rp-month-phase mp3">Ph 3</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M9</div><div class="rp-month-label">Salesforce integration + SF interface design</div><div class="rp-month-phase mp4">Ph 4</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M10</div><div class="rp-month-label">Tally integration + CRM UI iterations</div><div class="rp-month-phase mp4">Ph 4</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M11</div><div class="rp-month-label">CRM analytics + integration QA + design finishes</div><div class="rp-month-phase mp4">Ph 4</div><div class="rp-month-amt">₹70,000</div></div>
+        <div class="rp-month-row"><div class="rp-month-num">M12</div><div class="rp-month-label">Final QA + optimisation + docs + full handover</div><div class="rp-month-phase mp5">Ph 5</div><div class="rp-month-amt">₹70,000</div></div>
+      </div>
       <div class="rp-total-row">
-        <span class="rp-total-label">Grand total · M1 (₹70k) + M2–M12 (₹47k × 11)</span>
-        <span class="rp-total-amt">₹5,87,000</span>
+        <span class="rp-total-label">Total contract value (12 months)</span>
+        <span class="rp-total-amt">₹8,40,000</span>
       </div>
     </div>
 
@@ -420,12 +365,12 @@
     <div>
       <div class="rp-section-title">Contract terms</div>
       <div class="rp-terms">
-        <div class="rp-term"><div class="rp-term-label">Dev billing</div><div class="rp-term-val">₹35,000 on 1st of every month</div></div>
-        <div class="rp-term"><div class="rp-term-label">Design (one-time)</div><div class="rp-term-val">₹35,000 due in Month 1</div></div>
-        <div class="rp-term"><div class="rp-term-label">Design support M2+</div><div class="rp-term-val">₹12,000/month (included in ₹47k)</div></div>
+        <div class="rp-term"><div class="rp-term-label">Billing</div><div class="rp-term-val">1st of every month</div></div>
         <div class="rp-term"><div class="rp-term-label">Notice period</div><div class="rp-term-val">30 days written notice</div></div>
-        <div class="rp-term"><div class="rp-term-label">IP ownership</div><div class="rp-term-val">Full transfer on project completion</div></div>
-        <div class="rp-term"><div class="rp-term-label">GST</div><div class="rp-term-val">18% applicable if registered</div></div>
+        <div class="rp-term"><div class="rp-term-label">Scope changes</div><div class="rp-term-val">Adjusted monthly</div></div>
+        <div class="rp-term"><div class="rp-term-label">Ownership</div><div class="rp-term-val">Full IP transfer on completion</div></div>
+        <div class="rp-term"><div class="rp-term-label">Dev retainer</div><div class="rp-term-val">₹35,000 / month</div></div>
+        <div class="rp-term"><div class="rp-term-label">Design retainer</div><div class="rp-term-val">₹35,000 / month</div></div>
       </div>
     </div>
 
@@ -433,179 +378,133 @@
   </div>
 </section>
 
-<!-- COST BREAKDOWN -->
+<!-- DESIGN SCOPE SECTION -->
 <section class="section">
-  <div class="section-label">Full cost breakdown</div>
-
-  <div class="breakdown-wrapper">
-    <div class="breakdown-box">
-      <div class="breakdown-box-header">
-        <div>
-          <span class="bbh-badge badge-dev">Development</span>
-          <div class="bbh-title" style="margin-top:6px;">Dev retainer — ₹35,000 × 12 months</div>
-        </div>
-        <div class="bbh-total">₹4,20,000</div>
-      </div>
-      <table class="breakdown-table">
-        <tr><td>E-commerce platform (catalogue, ordering, branding, payments)</td><td>₹1,00,000</td></tr>
-        <tr><td>GST invoicing + corporate accounts</td><td>₹20,000</td></tr>
-        <tr><td>Admin panel + analytics dashboard</td><td>₹35,000</td></tr>
-        <tr><td>Email + notifications</td><td>₹10,000</td></tr>
-        <tr><td>CRM core + per-client config panel</td><td>₹23,000</td></tr>
-        <tr><td>Salesforce + Tally integrations</td><td>₹22,000</td></tr>
-        <tr><td>CRM analytics + integration QA</td><td>₹10,000</td></tr>
-        <tr><td>Final QA, security, performance + handover</td><td>₹35,000</td></tr>
-        <tr style="background:var(--g100)"><td><strong>Auth + roles + project setup + deployment</strong></td><td><strong>₹35,000</strong></td></tr>
-        <tr style="background:var(--g100)"><td><strong>Ongoing dev retainer buffer (scope adjustments)</strong></td><td><strong>₹30,000</strong></td></tr>
-      </table>
-    </div>
-
-    <div class="breakdown-box">
-      <div class="breakdown-box-header">
-        <div>
-          <span class="bbh-badge badge-design">Design</span>
-          <div class="bbh-title" style="margin-top:6px;">One-time + post-delivery support</div>
-        </div>
-        <div class="bbh-total">₹1,67,000</div>
-      </div>
-      <table class="breakdown-table">
-        <tr><td style="font-weight:600;color:var(--black)">Month 1 — one-time design (full scope)</td><td style="font-weight:700">₹35,000</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">Discovery &amp; strategy</td><td>₹4,000</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">Branding &amp; visual identity</td><td>₹8,000</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">Website UI/UX core screens</td><td>₹15,000</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">CRM / Salesforce interface design</td><td>₹5,000</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">Responsive &amp; interaction design</td><td>₹3,000</td></tr>
-        <tr style="background:var(--g100)"><td style="font-weight:600;color:var(--black)">Months 2–12 — post-delivery support (₹12,000 × 11)</td><td style="font-weight:700">₹1,32,000</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">Branding maintenance</td><td>₹2,000/mo</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">UI/UX iterations as dev progresses</td><td>₹5,000/mo</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">Minor page additions</td><td>₹3,000/mo</td></tr>
-        <tr><td style="padding-left:28px;color:var(--g500)">Design support + dev handoff</td><td>₹2,000/mo</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="grand-total-box">
-    <div class="gtb-inner">
-      <div class="gtb-cell">
-        <div class="gtb-label">Month 1 total</div>
-        <div class="gtb-val">₹70,000</div>
-        <div class="gtb-sub">Dev ₹35k + Design ₹35k</div>
-      </div>
-      <div class="gtb-cell">
-        <div class="gtb-label">Months 2–12</div>
-        <div class="gtb-val">₹47,000</div>
-        <div class="gtb-sub">Dev ₹35k + Support ₹12k · × 11</div>
-      </div>
-      <div class="gtb-cell">
-        <div class="gtb-label">Dev total (12 months)</div>
-        <div class="gtb-val">₹4,20,000</div>
-        <div class="gtb-sub">₹35,000 × 12</div>
-      </div>
-      <div class="gtb-cell hl">
-        <div class="gtb-label">Grand total</div>
-        <div class="gtb-val green">₹5,87,000</div>
-        <div class="gtb-sub">Dev + Design + Support</div>
-      </div>
-    </div>
-    <div class="gtb-final">
-      <div class="gtb-final-label">
-        Total contract value — Development + Design (one-time) + Post-delivery design support
-        <small>GST @ 18% applicable if registered · Optional case study design add-on not included</small>
-      </div>
-      <div class="gtb-final-val">₹5,87,000</div>
-    </div>
-    <div class="gtb-addon">Optional: Case study design add-on +₹10,000 · Total with add-on: ₹5,97,000</div>
-  </div>
-</section>
-
-<!-- DESIGN SCOPE -->
-<section class="section">
-  <div class="section-label">Design scope — one-time · Month 1 · ₹35,000</div>
+  <div class="section-label">Design scope — bifurcation</div>
 
   <div class="design-grid">
     <div class="design-card">
       <span class="design-card-tag tag-discovery">Discovery</span>
       <div class="design-card-title">Discovery &amp; strategy</div>
-      <div class="design-card-desc">Requirements including CRM/Salesforce flow, user journeys, sitemap, competitor analysis.</div>
+      <div class="design-card-desc">Requirement understanding including CRM/Salesforce flow, user journey mapping, sitemap, and competitor analysis.</div>
       <ul class="design-features">
         <li>Requirements workshop with Parsoncorp team</li>
         <li>User journey mapping (buyer, admin, account manager)</li>
-        <li>Full sitemap for e-commerce + CRM portal</li>
-        <li>Competitor analysis of 3–5 gifting platforms</li>
+        <li>Full sitemap for e-commerce + CRM</li>
+        <li>Competitor analysis (3–5 gifting platforms)</li>
       </ul>
-      <div class="design-price-row"><div class="design-price-label">One-time</div><div class="design-price">₹4,000</div></div>
+      <div class="design-price-row">
+        <div><div class="design-price-label">Month 1 cost</div><div class="design-price">₹4,000</div></div>
+        <span style="font-size:11px;color:var(--g500)">One-time</span>
+      </div>
     </div>
+
     <div class="design-card">
       <span class="design-card-tag tag-brand">Branding</span>
       <div class="design-card-title">Branding &amp; visual identity</div>
       <div class="design-card-desc">Color palette, typography, UI style guide, visual direction (minimal + aesthetic), brand consistency system.</div>
       <ul class="design-features">
         <li>Primary + secondary color palette</li>
-        <li>Typography scale (headings, body, labels)</li>
-        <li>UI style guide — buttons, cards, inputs</li>
-        <li>Brand consistency + component system</li>
+        <li>Typography system (headings, body, labels)</li>
+        <li>UI style guide (buttons, cards, inputs)</li>
+        <li>Visual direction — minimal + aesthetic</li>
+        <li>Brand consistency &amp; component system</li>
       </ul>
-      <div class="design-price-row"><div class="design-price-label">One-time</div><div class="design-price">₹8,000</div></div>
+      <div class="design-price-row">
+        <div><div class="design-price-label">Month 1 cost</div><div class="design-price">₹8,000</div></div>
+        <span style="font-size:11px;color:var(--g500)">M2+ reduces to ₹2,000</span>
+      </div>
     </div>
+
     <div class="design-card">
       <span class="design-card-tag tag-ux">UI/UX</span>
-      <div class="design-card-title">Website UI/UX — core screens</div>
+      <div class="design-card-title">Website UI/UX design — core screens</div>
       <div class="design-card-desc">Homepage + key pages (About, Services, Contact), responsive layouts, component-based design system.</div>
       <ul class="design-features">
-        <li>Homepage, About, Services, Contact layouts</li>
-        <li>Product listing + detail page design</li>
+        <li>Homepage design (hero, features, testimonials, CTA)</li>
+        <li>About, Services, Contact page layouts</li>
+        <li>Product listing + product detail page</li>
         <li>Responsive layouts (desktop + mobile)</li>
-        <li>Component-based design system in Figma</li>
+        <li>Component-based design system (Figma)</li>
       </ul>
-      <div class="design-price-row"><div class="design-price-label">One-time</div><div class="design-price">₹15,000</div></div>
+      <div class="design-price-row">
+        <div><div class="design-price-label">Month 1 cost</div><div class="design-price">₹15,000</div></div>
+        <span style="font-size:11px;color:var(--g500)">Iterations M2+ ₹5,000</span>
+      </div>
     </div>
+
     <div class="design-card">
       <span class="design-card-tag tag-crm-design">CRM Design</span>
       <div class="design-card-title">CRM / Salesforce interface design</div>
-      <div class="design-card-desc">Dashboard UI concepts, lead flow, form UX, data display layouts. Design only — no development.</div>
+      <div class="design-card-desc">Dashboard UI concepts, lead flow design, form UX, data display layouts. Design only — no development in this cost.</div>
       <ul class="design-features">
         <li>CRM dashboard UI concept</li>
         <li>Client pipeline (Kanban) design</li>
-        <li>SF integration settings page design</li>
-        <li>Data display table + form UX layouts</li>
+        <li>Lead &amp; deal form UX</li>
+        <li>Salesforce integration settings page design</li>
+        <li>Data display table layouts</li>
       </ul>
-      <div class="design-price-row"><div class="design-price-label">One-time</div><div class="design-price">₹5,000</div></div>
+      <div class="design-price-row">
+        <div><div class="design-price-label">Month 1 cost</div><div class="design-price">₹5,000</div></div>
+        <span style="font-size:11px;color:var(--g500)">Design only</span>
+      </div>
     </div>
+
     <div class="design-card">
       <span class="design-card-tag tag-responsive">Responsive</span>
       <div class="design-card-title">Responsive &amp; interaction design</div>
       <div class="design-card-desc">Mobile + tablet optimisation, button states, hover states, micro-interactions across all screens.</div>
       <ul class="design-features">
-        <li>Mobile breakpoints (375px, 768px)</li>
+        <li>Mobile breakpoint designs (375px, 768px)</li>
         <li>Tablet optimisation layouts</li>
-        <li>Button/input state designs (hover, active, disabled)</li>
+        <li>Button + input state designs (hover, active, disabled)</li>
         <li>Micro-interaction specs (transitions, loaders)</li>
       </ul>
-      <div class="design-price-row"><div class="design-price-label">One-time</div><div class="design-price">₹3,000</div></div>
+      <div class="design-price-row">
+        <div><div class="design-price-label">Month 1 cost</div><div class="design-price">₹3,000</div></div>
+        <span style="font-size:11px;color:var(--g500)">Included in M2+</span>
+      </div>
     </div>
+
     <div class="design-card">
       <span class="design-card-tag tag-addon">Optional Add-On</span>
       <div class="design-card-title">Case study design</div>
-      <div class="design-card-desc">High-conversion case study page (problem → solution → results). Ideal for Google, Nvidia, Accenture showcase pages.</div>
+      <div class="design-card-desc">High-conversion case study page (problem → solution → results), visual storytelling, credibility asset for enterprise clients.</div>
       <ul class="design-features">
         <li>Problem / solution / results layout</li>
         <li>Visual storytelling with data callouts</li>
         <li>Client logo + quote integration</li>
-        <li>Credibility asset for enterprise client pages</li>
+        <li>Credibility asset for Accenture, Google, Nvidia pages</li>
       </ul>
-      <div class="design-price-row"><div class="design-price-label">Optional — not in retainer</div><div class="design-price">₹10,000</div></div>
+      <div class="design-price-row">
+        <div><div class="design-price-label">Optional add-on</div><div class="design-price">₹10,000</div></div>
+        <span style="font-size:11px;color:var(--g500)">One-time, if needed</span>
+      </div>
     </div>
   </div>
 
-  <div class="section-label" style="margin-top:8px;">Post-delivery design support — Month 2 onwards · ₹12,000/month</div>
-  <p class="support-note">Design is fully delivered in Month 1. From Month 2, a small support retainer of ₹12,000/month covers iterations as development progresses, minor page additions, and dev handoff support. This is separate from the ₹35,000 dev retainer.</p>
+  <!-- OPTIONAL ADD-ON ROW -->
+  <div class="addon-row">
+    <div class="addon-left">
+      <span class="addon-badge">Optional</span>
+      <div>
+        <div class="addon-title">Case study design add-on</div>
+        <div class="addon-desc">High-conversion case study page — problem → solution → results. Ideal for Google, Nvidia, Accenture pages. Not included in base retainer.</div>
+      </div>
+    </div>
+    <div class="addon-price">+ ₹10,000</div>
+  </div>
+
+  <!-- MONTHLY DESIGN SUPPORT TABLE -->
+  <div class="section-label" style="margin-top: 0;">Monthly design support — post month 1</div>
+  <p class="support-note">Branding effort reduces after initial setup in Month 1, allowing redistribution of effort to UX iterations and ongoing support from Month 2 onwards.</p>
   <table class="support-table">
     <thead>
       <tr>
-        <th style="width:32%">Service</th>
-        <th style="width:20%">Month 1</th>
-        <th style="width:20%">Month 2–12</th>
-        <th>What it covers</th>
+        <th style="width:35%">Service</th>
+        <th style="width:25%">Month 1</th>
+        <th style="width:25%">Month 2+</th>
+        <th>Notes</th>
       </tr>
     </thead>
     <tbody>
@@ -613,37 +512,99 @@
         <td><strong>Branding &amp; visual identity</strong></td>
         <td>₹8,000</td>
         <td>₹2,000</td>
-        <td style="font-size:11px;color:var(--g500)">Full setup in M1 · maintenance-only tweaks after</td>
+        <td style="font-size:12px;color:var(--g500)">Heavy setup in M1, maintenance only after</td>
       </tr>
       <tr>
         <td><strong>UI/UX iterations</strong></td>
         <td>Included in core</td>
         <td>₹5,000</td>
-        <td style="font-size:11px;color:var(--g500)">Screen updates as new dev features roll out each month</td>
+        <td style="font-size:12px;color:var(--g500)">Ongoing screen updates as dev progresses</td>
       </tr>
       <tr>
         <td><strong>Minor page additions</strong></td>
         <td>Included in core</td>
         <td>₹3,000</td>
-        <td style="font-size:11px;color:var(--g500)">New landing pages, campaign pages, admin screens</td>
+        <td style="font-size:12px;color:var(--g500)">New landing pages, campaign pages etc.</td>
       </tr>
       <tr>
-        <td><strong>Design support &amp; dev handoff</strong></td>
+        <td><strong>Design support &amp; handoff</strong></td>
         <td>Included in core</td>
         <td>₹2,000</td>
-        <td style="font-size:11px;color:var(--g500)">Figma specs, asset exports, QA against designs</td>
+        <td style="font-size:12px;color:var(--g500)">Developer handoff specs, asset exports, QA</td>
       </tr>
-      <tr class="total-row">
-        <td><strong>Monthly design support total (M2–M12)</strong></td>
-        <td style="color:var(--g500)">₹35,000 full scope</td>
-        <td style="color:#9d174d;font-weight:700">₹12,000/mo</td>
-        <td style="font-size:11px;color:var(--g500)">₹12,000 × 11 months = ₹1,32,000</td>
+      <tr style="background:var(--g100)">
+        <td><strong>Monthly design total (M2+)</strong></td>
+        <td style="color:var(--g500)">₹35,000 (full scope)</td>
+        <td style="color:#5b21b6;font-weight:700">₹12,000</td>
+        <td style="font-size:12px;color:var(--g500)">Remaining ₹23,000 redistributed to dev/CRM in M2+</td>
       </tr>
     </tbody>
   </table>
 </section>
 
-<!-- PHASE PLAN -->
+<!-- COMBINED TOTALS -->
+<section class="section">
+  <div class="section-label">Combined project totals</div>
+
+  <div class="totals-section">
+    <div class="totals-header">Full project cost breakdown — development + design</div>
+    <div class="totals-grid">
+      <div class="totals-cell">
+        <div class="totals-cell-label">Development retainer</div>
+        <div class="totals-cell-val">₹4,20,000</div>
+        <div class="totals-cell-sub">₹35,000 × 12 months</div>
+      </div>
+      <div class="totals-cell">
+        <div class="totals-cell-label">Design retainer</div>
+        <div class="totals-cell-val">₹4,20,000</div>
+        <div class="totals-cell-sub">₹35,000 × 12 months</div>
+      </div>
+      <div class="totals-cell highlight">
+        <div class="totals-cell-label">Total contract value</div>
+        <div class="totals-cell-val">₹8,40,000</div>
+        <div class="totals-cell-sub">₹70,000 × 12 months</div>
+      </div>
+    </div>
+
+    <div class="totals-breakdown">
+      <div class="totals-row dev">
+        <span class="tr-label"><span class="tr-dot dot-dev"></span>E-commerce platform (catalogue, ordering, branding, GST, payments, auth, notifications)</span>
+        <span class="tr-val">₹1,00,000</span>
+      </div>
+      <div class="totals-row dev">
+        <span class="tr-label"><span class="tr-dot dot-dev"></span>Admin panel, analytics dashboard, QA &amp; deployment</span>
+        <span class="tr-val">₹55,000</span>
+      </div>
+      <div class="totals-row crm">
+        <span class="tr-label"><span class="tr-dot dot-crm"></span>CRM core + Salesforce + Tally + per-client config + CRM analytics</span>
+        <span class="tr-val">₹55,000</span>
+      </div>
+      <div class="totals-row dev">
+        <span class="tr-label"><span class="tr-dot dot-dev"></span>Final QA, performance hardening, docs, handover (Phase 5)</span>
+        <span class="tr-val">₹35,000</span>
+      </div>
+      <div class="totals-row design">
+        <span class="tr-label"><span class="tr-dot dot-design"></span>Design — discovery, branding, UI/UX, CRM design, responsive &amp; interactions (Month 1)</span>
+        <span class="tr-val">₹35,000</span>
+      </div>
+      <div class="totals-row design">
+        <span class="tr-label"><span class="tr-dot dot-design"></span>Design — ongoing support, iterations, page additions (Months 2–12 · ₹35,000/mo)</span>
+        <span class="tr-val">₹3,85,000</span>
+      </div>
+    </div>
+
+    <div class="totals-final">
+      <div>
+        <div class="totals-final-label">Grand total — 12-month retainer (Dev + Design)</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:3px;">GST @ 18% applicable if registered · Optional case study add-on not included</div>
+      </div>
+      <div class="totals-final-val">₹8,40,000</div>
+    </div>
+    <div class="totals-addon-note">Optional: Case study design add-on +₹10,000 · Total with add-on: ₹8,50,000</div>
+  </div>
+</section>
+
+<!-- PHASE-WISE DELIVERY PLAN -->
 <section class="section">
   <div class="section-label">Phase-wise delivery plan</div>
 
@@ -651,42 +612,50 @@
     <div class="phase-card-header">
       <div class="pch-left">
         <span class="pch-badge pb1">Phase 1</span>
-        <div><div class="pch-title">Foundation, auth, catalogue + full design delivery</div><div class="pch-months">Month 1–2 · Weeks 1–8</div></div>
+        <div><div class="pch-title">Foundation, catalogue &amp; brand identity</div><div class="pch-months">Month 1–2 · Weeks 1–8</div></div>
       </div>
-      <div><div class="pch-cost-label">M1: ₹70,000 · M2: ₹47,000</div><div class="pch-cost-val">₹1,17,000</div></div>
+      <div><div class="pch-cost-label">Retainer</div><div class="pch-cost-val">₹1,40,000</div></div>
     </div>
-    <table class="phase-table">
-      <thead><tr><th style="width:28%">Task</th><th style="width:14%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="task-name">Discovery + branding + UI/UX <span class="task-type tt-design">Design</span></span><div class="task-sub">All 5 design scope items delivered in M1</div></td>
-          <td><span class="week-badge">Wk 1–4</span></td>
-          <td>M1</td>
-          <td><ul class="deliverable-list"><li>Requirement workshop + user journeys + sitemap</li><li>Full brand identity — colors, typography, style guide</li><li>Homepage, About, Services, Contact, product pages (Figma)</li><li>CRM + SF interface UI concepts</li><li>Responsive specs + micro-interaction guidelines</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Project setup + architecture <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Repo, CI/CD, DB schema, environments</div></td>
-          <td><span class="week-badge">Wk 1–2</span></td>
-          <td>M1</td>
-          <td><ul class="deliverable-list"><li>Next.js + Node.js monorepo, PostgreSQL schema</li><li>Vercel + Railway deploy pipeline</li><li>Dev / staging / production environments</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Auth + user roles <span class="task-type tt-dev">Dev</span></span><div class="task-sub">JWT, company login, RBAC</div></td>
-          <td><span class="week-badge">Wk 2–3</span></td>
-          <td>M1</td>
-          <td><ul class="deliverable-list"><li>JWT auth + Admin / Manager / Viewer roles</li><li>Company-level accounts, password reset, protected routes</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Product catalogue — backend + frontend <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Categories, filters, search, bulk qty selector</div></td>
-          <td><span class="week-badge">Wk 3–8</span></td>
-          <td>M1–M2</td>
-          <td><ul class="deliverable-list"><li>Dynamic category tree, product schema, image upload</li><li>Responsive product grid + filters + full-text search</li><li>Product detail page with bulk quantity selector</li><li>Design support: iterations on catalogue screens</li></ul></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="phase-card-body">
+      <table class="phase-table">
+        <thead><tr><th style="width:26%">Task</th><th style="width:13%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="task-name">Discovery &amp; strategy (Design)</span><div class="task-sub">Requirements, user journeys, sitemap</div></td>
+            <td><span class="week-badge">Wk 1</span></td>
+            <td>M1</td>
+            <td><ul class="deliverable-list"><li>Requirements workshop + CRM/SF flow mapping</li><li>User journey maps (buyer, admin, account manager)</li><li>Full sitemap for e-commerce + CRM portal</li><li>Competitor analysis of 3–5 gifting platforms</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Branding &amp; visual identity (Design)</span><div class="task-sub">Color, typography, style guide, direction</div></td>
+            <td><span class="week-badge">Wk 1–2</span></td>
+            <td>M1</td>
+            <td><ul class="deliverable-list"><li>Primary + secondary color palette system</li><li>Typography scale (headings, body, labels)</li><li>UI style guide — buttons, cards, inputs, badges</li><li>Visual direction doc — minimal + aesthetic</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Project setup &amp; architecture (Dev)</span><div class="task-sub">Repo, CI/CD, DB schema, environments</div></td>
+            <td><span class="week-badge">Wk 1–2</span></td>
+            <td>M1</td>
+            <td><ul class="deliverable-list"><li>Next.js + Node.js monorepo scaffold</li><li>PostgreSQL schema design + migrations</li><li>Vercel + Railway deploy pipeline</li><li>Dev / staging / production environments</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Auth + roles (Dev) · Core UI/UX (Design)</span><div class="task-sub">JWT auth, RBAC + homepage, key screens</div></td>
+            <td><span class="week-badge">Wk 2–4</span></td>
+            <td>M1</td>
+            <td><ul class="deliverable-list"><li>JWT auth + Admin/Manager/Viewer roles</li><li>Homepage, About, Services, Contact designs</li><li>Responsive layouts for all core screens</li><li>Component-based design system in Figma</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Product catalogue (Dev + Design)</span><div class="task-sub">Backend + frontend + product listing UI</div></td>
+            <td><span class="week-badge">Wk 3–8</span></td>
+            <td>M1–M2</td>
+            <td><ul class="deliverable-list"><li>Category tree, product schema, image upload</li><li>Product listing grid with filters + search</li><li>Product detail page with bulk qty selector</li><li>Mobile + tablet responsive design finishes</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="phase-card-footer">
-      <div class="pcf-goal"><strong>Phase 1 goal:</strong> All design is fully delivered and signed off in Month 1. Product catalogue is live on staging by end of M2. Brand identity is ready to apply across all future dev phases.</div>
-      <div class="pcf-milestone">Milestone: Design sign-off M1 · Catalogue staging M2</div>
+      <div class="pcf-goal"><strong>Phase 1 goal:</strong> Brand identity is established, design system is in Figma, and a fully functional product catalogue is live on staging. Parsoncorp's visual identity is ready to apply across all future screens.</div>
+      <div class="pcf-milestone">Milestone: Brand signed off + catalogue live on staging by M2</div>
     </div>
   </div>
 
@@ -694,42 +663,44 @@
     <div class="phase-card-header">
       <div class="pch-left">
         <span class="pch-badge pb2">Phase 2</span>
-        <div><div class="pch-title">Ordering, branding configurator, payments + GST</div><div class="pch-months">Month 3–5 · Weeks 9–20</div></div>
+        <div><div class="pch-title">Ordering, branding configurator, payments &amp; GST</div><div class="pch-months">Month 3–5 · Weeks 9–20</div></div>
       </div>
-      <div><div class="pch-cost-label">₹47,000 × 3 months</div><div class="pch-cost-val">₹1,41,000</div></div>
+      <div><div class="pch-cost-label">Retainer</div><div class="pch-cost-val">₹2,10,000</div></div>
     </div>
-    <table class="phase-table">
-      <thead><tr><th style="width:28%">Task</th><th style="width:14%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="task-name">Bulk + corporate ordering <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Min qty, tiered pricing, PO upload, tracking</div></td>
-          <td><span class="week-badge">Wk 9–12</span></td>
-          <td>M3</td>
-          <td><ul class="deliverable-list"><li>Volume pricing engine with tiered slabs</li><li>Corporate PO PDF upload + validation</li><li>Quote-request flow with approval + order tracking</li><li>Design support: order flow screen iterations</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Branding configurator <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Logo upload, placement canvas, cost calculator</div></td>
-          <td><span class="week-badge">Wk 12–16</span></td>
-          <td>M4</td>
-          <td><ul class="deliverable-list"><li>Per-SKU logo placement canvas (Fabric.js)</li><li>Embroidery / screen print / digital toggle</li><li>Branding cost calculator + mockup preview</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Payment gateway <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Razorpay, partial payments, credit terms</div></td>
-          <td><span class="week-badge">Wk 14–16</span></td>
-          <td>M4</td>
-          <td><ul class="deliverable-list"><li>Razorpay full integration + partial payments</li><li>Credit terms toggle per corporate account</li><li>Payment failure handling + auto-retry</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">GST invoicing + corporate accounts <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Auto GST, GSTIN, invoice PDF, account pricing</div></td>
-          <td><span class="week-badge">Wk 17–20</span></td>
-          <td>M5</td>
-          <td><ul class="deliverable-list"><li>GST computation (CGST/SGST/IGST) + GSTIN validation</li><li>Branded downloadable invoice PDF</li><li>Account-level pricing rules + credit note generation</li></ul></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="phase-card-body">
+      <table class="phase-table">
+        <thead><tr><th style="width:26%">Task</th><th style="width:13%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="task-name">Bulk &amp; corporate ordering (Dev + Design)</span><div class="task-sub">Min qty, tiered pricing, PO upload, order UI</div></td>
+            <td><span class="week-badge">Wk 9–12</span></td>
+            <td>M3</td>
+            <td><ul class="deliverable-list"><li>Volume pricing engine with tiered slabs</li><li>Corporate PO PDF upload + validation</li><li>Quote-request flow with approval workflow</li><li>Order status tracking UI design + dev</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Branding configurator (Dev + Design)</span><div class="task-sub">Logo upload, placement canvas, cost calc</div></td>
+            <td><span class="week-badge">Wk 12–16</span></td>
+            <td>M4</td>
+            <td><ul class="deliverable-list"><li>Per-SKU logo placement canvas (Fabric.js)</li><li>Embroidery / screen print / digital toggle</li><li>Branding cost calculator (area-based)</li><li>Mockup preview + design of configurator UI</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Payment gateway (Dev) · UX iterations (Design)</span><div class="task-sub">Razorpay, partial payments + screen refinements</div></td>
+            <td><span class="week-badge">Wk 14–16</span></td>
+            <td>M4</td>
+            <td><ul class="deliverable-list"><li>Razorpay full integration + credit terms</li><li>Partial payment support + failure handling</li><li>Payment flow UX design + iteration on existing screens</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">GST invoicing &amp; corporate accounts (Dev + Design)</span><div class="task-sub">Auto GST, GSTIN, invoice PDF, account pricing</div></td>
+            <td><span class="week-badge">Wk 17–20</span></td>
+            <td>M5</td>
+            <td><ul class="deliverable-list"><li>GST computation (CGST/SGST/IGST), GSTIN validation</li><li>Downloadable branded invoice PDF</li><li>Account-level pricing rules + credit note generation</li><li>Invoice + account management UI design</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="phase-card-footer">
-      <div class="pcf-goal"><strong>Phase 2 goal:</strong> End-to-end ordering is functional — a corporate client can browse, configure branding, place a bulk order, pay via Razorpay, and receive a GST invoice.</div>
-      <div class="pcf-milestone">Milestone: First test order completed by end of M5</div>
+      <div class="pcf-goal"><strong>Phase 2 goal:</strong> End-to-end ordering is functional — a corporate client can browse, configure branding, place a bulk order, pay, and receive a GST invoice. All screens are designed, responsive, and dev-ready.</div>
+      <div class="pcf-milestone">Milestone: First end-to-end test order completed by end of M5</div>
     </div>
   </div>
 
@@ -737,42 +708,44 @@
     <div class="phase-card-header">
       <div class="pch-left">
         <span class="pch-badge pb3">Phase 3</span>
-        <div><div class="pch-title">Admin panel, notifications, analytics + platform launch</div><div class="pch-months">Month 6–8 · Weeks 21–32</div></div>
+        <div><div class="pch-title">Admin panel, notifications, analytics &amp; platform launch</div><div class="pch-months">Month 6–8 · Weeks 21–32</div></div>
       </div>
-      <div><div class="pch-cost-label">₹47,000 × 3 months</div><div class="pch-cost-val">₹1,41,000</div></div>
+      <div><div class="pch-cost-label">Retainer</div><div class="pch-cost-val">₹2,10,000</div></div>
     </div>
-    <table class="phase-table">
-      <thead><tr><th style="width:28%">Task</th><th style="width:14%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="task-name">Admin — orders, inventory + pricing rules <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Full order lifecycle, stock, dynamic pricing</div></td>
-          <td><span class="week-badge">Wk 21–24</span></td>
-          <td>M6</td>
-          <td><ul class="deliverable-list"><li>Full order lifecycle (confirm → dispatch → deliver)</li><li>Inventory control + low-stock alerts + dynamic pricing editor</li><li>Client account management panel, CSV export</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Admin analytics dashboard <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Revenue charts, top products, client reports</div></td>
-          <td><span class="week-badge">Wk 24–26</span></td>
-          <td>M6–M7</td>
-          <td><ul class="deliverable-list"><li>Revenue + order volume charts (monthly/quarterly)</li><li>Top products, client-wise revenue breakdown</li><li>Pending quotes + conversion metrics</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Email + notification system <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Transactional emails, dispatch alerts</div></td>
-          <td><span class="week-badge">Wk 25–27</span></td>
-          <td>M7</td>
-          <td><ul class="deliverable-list"><li>SendGrid integration + branded email templates</li><li>Order confirm, invoice, dispatch, delivery notifications</li><li>Admin new-order + quote-request alerts</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Platform QA + production launch <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Full testing, mobile, security, deploy</div></td>
-          <td><span class="week-badge">Wk 28–32</span></td>
-          <td>M8</td>
-          <td><ul class="deliverable-list"><li>Full regression + cross-browser + mobile audit</li><li>Performance (Core Web Vitals) + OWASP security review</li><li>Production deploy, SSL, DNS handover</li></ul></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="phase-card-body">
+      <table class="phase-table">
+        <thead><tr><th style="width:26%">Task</th><th style="width:13%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="task-name">Admin panel — orders &amp; inventory (Dev + Design)</span><div class="task-sub">Order lifecycle, stock, pricing rules, client mgmt</div></td>
+            <td><span class="week-badge">Wk 21–24</span></td>
+            <td>M6</td>
+            <td><ul class="deliverable-list"><li>Full order lifecycle (confirm → dispatch → deliver)</li><li>Inventory control + low-stock alerts</li><li>Dynamic pricing rules editor</li><li>Client account management panel with design</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Admin analytics dashboard (Dev + Design)</span><div class="task-sub">Revenue charts, top products, client reports</div></td>
+            <td><span class="week-badge">Wk 24–26</span></td>
+            <td>M6–M7</td>
+            <td><ul class="deliverable-list"><li>Revenue + order volume charts (monthly/quarterly)</li><li>Top products by value, client-wise breakdown</li><li>Pending quotes + conversion metrics</li><li>Dashboard UI design with data visualisation</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Email &amp; notifications (Dev) · Design support</span><div class="task-sub">Transactional emails, alerts, design QA</div></td>
+            <td><span class="week-badge">Wk 25–27</span></td>
+            <td>M7</td>
+            <td><ul class="deliverable-list"><li>SendGrid integration + email templates (designed)</li><li>Order confirm, invoice, dispatch, delivery alerts</li><li>Admin new-order + quote-request notifications</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Platform QA + production launch</span><div class="task-sub">Full testing, mobile audit, security, deploy</div></td>
+            <td><span class="week-badge">Wk 28–32</span></td>
+            <td>M8</td>
+            <td><ul class="deliverable-list"><li>Full regression + cross-browser + mobile audit</li><li>Performance optimisation (Core Web Vitals)</li><li>Security review (OWASP Top 10 basics)</li><li>Production deploy, SSL, DNS + design final QA</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="phase-card-footer">
-      <div class="pcf-goal"><strong>Phase 3 goal:</strong> Full e-commerce platform is live in production. Parsoncorp's team can manage all orders, inventory, and clients from the admin panel. Public launch milestone.</div>
-      <div class="pcf-milestone">Milestone: Public platform live by end of M8</div>
+      <div class="pcf-goal"><strong>Phase 3 goal:</strong> The full e-commerce platform is live in production with a polished, brand-consistent design. Parsoncorp's team can manage all orders, inventory, and clients. Automated emails are live. Public launch milestone.</div>
+      <div class="pcf-milestone">Milestone: Public platform launch by end of M8</div>
     </div>
   </div>
 
@@ -780,42 +753,50 @@
     <div class="phase-card-header">
       <div class="pch-left">
         <span class="pch-badge pb4">Phase 4</span>
-        <div><div class="pch-title">CRM, Salesforce + Tally integrations</div><div class="pch-months">Month 9–11 · Weeks 33–44</div></div>
+        <div><div class="pch-title">CRM, Salesforce &amp; Tally integrations</div><div class="pch-months">Month 9–11 · Weeks 33–44</div></div>
       </div>
-      <div><div class="pch-cost-label">₹47,000 × 3 months</div><div class="pch-cost-val">₹1,41,000</div></div>
+      <div><div class="pch-cost-label">Retainer</div><div class="pch-cost-val">₹2,10,000</div></div>
     </div>
-    <table class="phase-table">
-      <thead><tr><th style="width:28%">Task</th><th style="width:14%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="task-name">CRM core + per-client config panel <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Client profiles, pipeline, activity log, integration toggle</div></td>
-          <td><span class="week-badge">Wk 33–37</span></td>
-          <td>M9</td>
-          <td><ul class="deliverable-list"><li>Per-client profile (company, GSTIN, contacts, account manager)</li><li>Deal + order pipeline (Kanban + list), activity log</li><li>Per-client integration toggle + encrypted credentials vault</li><li>Sync status dashboard + error logs + audit trail</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Salesforce integration <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Per-client OAuth, bi-directional sync</div></td>
-          <td><span class="week-badge">Wk 37–40</span></td>
-          <td>M10</td>
-          <td><ul class="deliverable-list"><li>Per-client Salesforce OAuth 2.0 + contact/account sync</li><li>Order push to SF Opportunities + deal stage mapping</li><li>Webhook listener for SF-side updates</li><li>Configurable field mapping per SF org</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Tally Prime integration <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Per-client XML bridge, invoice + ledger push</div></td>
-          <td><span class="week-badge">Wk 40–43</span></td>
-          <td>M10–M11</td>
-          <td><ul class="deliverable-list"><li>Tally Prime XML API bridge (TDL-based)</li><li>Auto-push GST invoices + ledger entries on order confirm</li><li>Per-client Tally company mapping + error retry queue</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">CRM analytics + integration QA <span class="task-type tt-dev">Dev</span></span><div class="task-sub">Pipeline reports, sync health, end-to-end testing</div></td>
-          <td><span class="week-badge">Wk 43–44</span></td>
-          <td>M11</td>
-          <td><ul class="deliverable-list"><li>CRM analytics: pipeline value, win rate, activity summary</li><li>Integration health monitor + end-to-end SF + Tally testing</li></ul></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="phase-card-body">
+      <table class="phase-table">
+        <thead><tr><th style="width:26%">Task</th><th style="width:13%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="task-name">CRM core + interface design</span><div class="task-sub">Client profiles, pipeline, activity log + UI</div></td>
+            <td><span class="week-badge">Wk 33–36</span></td>
+            <td>M9</td>
+            <td><ul class="deliverable-list"><li>Per-client profile (company, GSTIN, contacts)</li><li>Deal &amp; order pipeline (Kanban + list view)</li><li>Activity log — calls, emails, meetings, notes</li><li>CRM dashboard + pipeline UI designed (Figma + dev)</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Per-client integration config panel</span><div class="task-sub">Toggle SF/Tally per client, credentials vault</div></td>
+            <td><span class="week-badge">Wk 35–37</span></td>
+            <td>M9</td>
+            <td><ul class="deliverable-list"><li>Per-client integration settings page (designed + built)</li><li>Encrypted credentials vault (AES-256)</li><li>Sync status dashboard + error logs</li><li>Manual trigger + auto-sync schedule</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Salesforce integration (Dev) + SF UI (Design)</span><div class="task-sub">Per-client OAuth, bi-directional sync + SF screen design</div></td>
+            <td><span class="week-badge">Wk 37–40</span></td>
+            <td>M10</td>
+            <td><ul class="deliverable-list"><li>Per-client Salesforce OAuth 2.0</li><li>Contact/account bi-directional sync</li><li>Order push to SF Opportunities + webhook listener</li><li>SF interface design: form UX, data display layouts</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Tally Prime integration (Dev + Design)</span><div class="task-sub">Per-client XML bridge, invoice + ledger push</div></td>
+            <td><span class="week-badge">Wk 40–43</span></td>
+            <td>M10–M11</td>
+            <td><ul class="deliverable-list"><li>Tally Prime XML API bridge (TDL-based)</li><li>Auto-push GST invoices + ledger entries per transaction</li><li>Per-client Tally company mapping + error retry queue</li><li>Tally settings page UI design</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">CRM analytics + integration QA</span><div class="task-sub">Reports, sync health monitor, full QA</div></td>
+            <td><span class="week-badge">Wk 43–44</span></td>
+            <td>M11</td>
+            <td><ul class="deliverable-list"><li>CRM analytics: pipeline value, win rate, activity summary</li><li>Integration health monitor dashboard</li><li>End-to-end integration testing (SF + Tally per client)</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="phase-card-footer">
-      <div class="pcf-goal"><strong>Phase 4 goal:</strong> CRM is live and every corporate client (Google, Nvidia, Accenture, Capgemini) has their own independent Salesforce and Tally integration — built, tested, and syncing automatically.</div>
-      <div class="pcf-milestone">Milestone: All integrations live by end of M11</div>
+      <div class="pcf-goal"><strong>Phase 4 goal:</strong> The CRM is live and every corporate client (Google, Nvidia, Accenture, Capgemini) has their own independent Salesforce and Tally integration — fully designed, built, tested, and syncing automatically.</div>
+      <div class="pcf-milestone">Milestone: All client integrations live &amp; syncing by end of M11</div>
     </div>
   </div>
 
@@ -823,66 +804,68 @@
     <div class="phase-card-header">
       <div class="pch-left">
         <span class="pch-badge pb5">Phase 5</span>
-        <div><div class="pch-title">Final QA, optimisation, documentation + handover</div><div class="pch-months">Month 12 · Weeks 45–48</div></div>
+        <div><div class="pch-title">Final QA, optimisation, docs &amp; handover</div><div class="pch-months">Month 12 · Weeks 45–48</div></div>
       </div>
-      <div><div class="pch-cost-label">Final month</div><div class="pch-cost-val">₹47,000</div></div>
+      <div><div class="pch-cost-label">Retainer</div><div class="pch-cost-val">₹70,000</div></div>
     </div>
-    <table class="phase-table">
-      <thead><tr><th style="width:28%">Task</th><th style="width:14%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="task-name">Full platform audit + bug fixing <span class="task-type tt-dev">Dev</span></span><div class="task-sub">All modules, all integrations</div></td>
-          <td><span class="week-badge">Wk 45–46</span></td>
-          <td>M12</td>
-          <td><ul class="deliverable-list"><li>Complete regression across all 5 phases</li><li>Cross-browser + mobile final audit + all critical bug fixes</li><li>Performance profiling + optimisation</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Security + performance hardening <span class="task-type tt-dev">Dev</span></span><div class="task-sub">OWASP, load testing, caching</div></td>
-          <td><span class="week-badge">Wk 46–47</span></td>
-          <td>M12</td>
-          <td><ul class="deliverable-list"><li>OWASP Top 10 audit + rate limiting review</li><li>Redis caching + load testing for bulk order scenarios</li><li>Core Web Vitals final optimisation pass</li></ul></td>
-        </tr>
-        <tr>
-          <td><span class="task-name">Documentation + full handover <span class="task-type tt-both">Dev + Design</span></span><div class="task-sub">Tech docs, admin guide, Figma, source code</div></td>
-          <td><span class="week-badge">Wk 47–48</span></td>
-          <td>M12</td>
-          <td><ul class="deliverable-list"><li>Full technical docs (API reference, DB schema)</li><li>Admin panel user guide for Parsoncorp team</li><li>Integration setup guide (SF + Tally per client)</li><li>Full Figma file handover (all screens + components)</li><li>Source code repo transfer + 30-min walkthrough call</li></ul></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="phase-card-body">
+      <table class="phase-table">
+        <thead><tr><th style="width:26%">Task</th><th style="width:13%">Timeline</th><th style="width:10%">Month</th><th>Deliverables</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="task-name">Full platform audit + bug fixing</span><div class="task-sub">All modules, all integrations, all screens</div></td>
+            <td><span class="week-badge">Wk 45–46</span></td>
+            <td>M12</td>
+            <td><ul class="deliverable-list"><li>Complete regression across all 5 phases (dev + design)</li><li>Cross-browser + mobile final audit</li><li>All critical and high-priority bug fixes</li><li>Final design QA — pixel-perfect check against Figma</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Security, performance &amp; design polish</span><div class="task-sub">OWASP, load testing, caching, final visual polish</div></td>
+            <td><span class="week-badge">Wk 46–47</span></td>
+            <td>M12</td>
+            <td><ul class="deliverable-list"><li>OWASP Top 10 security review</li><li>Redis caching + load testing for bulk order scenarios</li><li>Core Web Vitals optimisation</li><li>Final visual polish pass on all screens</li></ul></td>
+          </tr>
+          <tr>
+            <td><span class="task-name">Documentation + full handover</span><div class="task-sub">Tech docs, admin guide, Figma, source code</div></td>
+            <td><span class="week-badge">Wk 47–48</span></td>
+            <td>M12</td>
+            <td><ul class="deliverable-list"><li>Full technical documentation (API, DB schema)</li><li>Admin panel user guide for Parsoncorp team</li><li>Integration setup guide (SF + Tally per client)</li><li>Full Figma design file handover (all screens, components)</li><li>Source code repo transfer + 30-min walkthrough call</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="phase-card-footer">
-      <div class="pcf-goal"><strong>Phase 5 goal:</strong> Entire platform — e-commerce, admin, CRM, all integrations + complete design system — fully audited, documented, and handed over with complete IP ownership.</div>
-      <div class="pcf-milestone">Milestone: Full IP + Figma + source code handover end of M12</div>
+      <div class="pcf-goal"><strong>Phase 5 goal:</strong> The entire platform — e-commerce, admin, CRM, all integrations, and complete design system — is fully audited, documented, and handed over with complete IP ownership. Retainer concludes with zero pending items.</div>
+      <div class="pcf-milestone">Milestone: Full IP + Figma + source code handover by end of M12</div>
     </div>
   </div>
 </section>
 
-<!-- CRM DETAIL -->
+<!-- CRM SCOPE DETAIL -->
 <section class="section">
   <div class="section-label">CRM &amp; integrations — scope detail</div>
   <div class="crm-grid">
     <div class="crm-card">
       <span class="crm-card-tag tag-crm">CRM Core</span>
       <div class="crm-card-title">Built-in CRM for Parsoncorp</div>
-      <div class="crm-card-desc">A dedicated CRM inside the admin panel — full visibility into every corporate client, order history, deals, and communication timeline.</div>
+      <div class="crm-card-desc">A dedicated CRM layer inside the admin panel — full visibility into every corporate client, their order history, deals, and communication timeline.</div>
       <ul class="crm-features">
         <li>Per-client profile with company, GSTIN, contacts</li>
-        <li>Deal + order pipeline (Kanban + list view)</li>
+        <li>Deal &amp; order pipeline (Kanban + list view)</li>
         <li>Activity log — calls, emails, meetings, notes</li>
         <li>Assigned account manager per client</li>
-        <li>Client-level custom pricing + credit terms</li>
-        <li>Tags, segments + global client search</li>
+        <li>Client-level custom pricing &amp; credit terms</li>
+        <li>Tags, segments &amp; global client search</li>
       </ul>
     </div>
     <div class="crm-card">
       <span class="crm-card-tag tag-client">Per-Client Config</span>
       <div class="crm-card-title">Per-client integration control panel</div>
-      <div class="crm-card-desc">Each client (Google, Nvidia, Accenture) gets their own integration settings — independently toggle SF and Tally, configure credentials, map fields.</div>
+      <div class="crm-card-desc">Each client (Google, Nvidia, Accenture) gets their own integration settings — independently toggle Salesforce and Tally, configure credentials, and map fields.</div>
       <ul class="crm-features">
         <li>Per-client Salesforce / Tally toggle</li>
         <li>Encrypted credentials vault (AES-256)</li>
         <li>Field mapping configuration UI</li>
-        <li>Sync status + error log per client</li>
+        <li>Sync status &amp; error log per client</li>
         <li>Manual trigger + auto-sync schedule</li>
         <li>Full audit trail of all sync events</li>
       </ul>
@@ -890,10 +873,10 @@
     <div class="crm-card">
       <span class="crm-card-tag tag-sf">Salesforce</span>
       <div class="crm-card-title">Salesforce integration</div>
-      <div class="crm-card-desc">Each client connects their own SF org via OAuth. Orders, contacts, and deals sync bi-directionally and automatically.</div>
+      <div class="crm-card-desc">Each client connects their own SF org via OAuth. Orders, contacts, and deals sync bi-directionally — automatically keeping both systems in sync.</div>
       <ul class="crm-features">
         <li>Per-client OAuth 2.0 Salesforce login</li>
-        <li>Contact + account bi-directional sync</li>
+        <li>Contact &amp; account sync (SF ↔ CRM)</li>
         <li>Order push to SF Opportunities</li>
         <li>Deal stage mapping per client org</li>
         <li>Webhook listener for SF-side updates</li>
@@ -909,13 +892,13 @@
         <li>Auto-push GST invoices on order confirm</li>
         <li>Ledger entry creation per transaction</li>
         <li>Per-client Tally company name mapping</li>
-        <li>Error handling + retry queue</li>
+        <li>Error handling &amp; retry queue</li>
         <li>Manual push option from admin panel</li>
       </ul>
     </div>
   </div>
   <div class="crm-note">
-    <strong>How per-client integrations work:</strong> Each corporate client has their own integration settings page in the admin panel. Google can have Salesforce + Tally both enabled. Nvidia, only Tally. Accenture, only Salesforce. Credentials are encrypted and stored per client — fully isolated. Built once, works for all current and future clients with zero code changes needed.
+    <strong>How per-client integrations work:</strong> Parsoncorp's admin panel includes a dedicated integrations page for each corporate client. For Google, enable Salesforce sync using Google's SF org + Tally sync using Google's Tally company. For Nvidia, only Tally. For Accenture, only Salesforce. Each client's integration is fully isolated — credentials encrypted per client. Built once, works for all current and future clients with zero code changes.
   </div>
 </section>
 
@@ -924,15 +907,15 @@
   <div class="section-label">Tech stack</div>
   <div class="cards-grid">
     <div class="card"><div class="card-number">01</div><div class="card-title">Next.js</div><div class="card-desc">SSR-first frontend with dynamic routing, image optimisation, and fast page loads.</div></div>
-    <div class="card"><div class="card-number">02</div><div class="card-title">Node.js API</div><div class="card-desc">REST API backend handling auth, orders, invoicing, CRM, and integration logic.</div></div>
-    <div class="card"><div class="card-number">03</div><div class="card-title">PostgreSQL</div><div class="card-desc">Relational DB structured for bulk orders, CRM data, and per-client config isolation.</div></div>
+    <div class="card"><div class="card-number">02</div><div class="card-title">Node.js API</div><div class="card-desc">REST API backend handling auth, orders, invoicing, CRM, and all integration logic.</div></div>
+    <div class="card"><div class="card-number">03</div><div class="card-number">03</div><div class="card-title">PostgreSQL</div><div class="card-desc">Relational DB structured for bulk orders, CRM data, and per-client config isolation.</div></div>
     <div class="card"><div class="card-number">04</div><div class="card-title">Salesforce + Tally</div><div class="card-desc">SF OAuth 2.0 API + Tally Prime XML bridge, independently configurable per client.</div></div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-left">Parsoncorp · parsoncorp.in · Quote #PQ-2026-001 · Dev retainer + one-time design</div>
-  <div class="footer-right">Dev ₹35,000/mo · Design ₹35,000 one-time · Total ₹5,87,000 · Valid 23 Apr 2026</div>
+  <div class="footer-left">Parsoncorp · parsoncorp.in · Quote #PQ-2026-001 · 12-month retainer · Dev + Design</div>
+  <div class="footer-right">₹70,000/month · Total ₹8,40,000 · Valid until 23 April 2026</div>
 </footer>
 
 </body>
